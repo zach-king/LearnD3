@@ -1,0 +1,28 @@
+<html>
+<head>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+
+<body>
+   <section> </section>
+   <section> </section>
+   <section> </section>
+   <section> </section>
+
+
+   <script>
+       var data = [4, 8, 15, 16, 23, 42];
+
+       // Single element operation
+       var body = d3.select("body");
+       var div = body.append("div");
+       div.html("<br />Hello, world!");
+
+       // Multi-element operation
+       var section = d3.selectAll("section");
+       var sec = section.append("div");
+       sec.html("I'm a section.");
+   </script>
+   
+</body>
+</html>
