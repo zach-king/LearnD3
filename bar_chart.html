@@ -21,7 +21,11 @@
     </div>
 
     <script>
+        // The f(x) values for each bar
         var data = [1, 1, 2, 3, 5, 8, 13, 21, 33, 54, 87];
+
+        // A function to scale the length of the bars later
+        var x = d3.scaleLinear().domain([0, d3.max(data)]).range([0, 500]);
 
         // Get our chart div
         var chart = d3.select(".chart");
@@ -35,7 +39,7 @@
         var barEnter = barUpdate.enter().append("div");
 
         // And set the width of each new bar as a multiple of the associated data value, d 
-        barEnter.style("width", function(d) { return d * 10 + "px"; });
+        barEnter.style("width", function(d) { return x(d) + "px"; });
         
         // Because these elements were created with data join, each bar is already bound to data. 
         // We set the dimensions of each bar based on its data by passing a function to compute the width style property
